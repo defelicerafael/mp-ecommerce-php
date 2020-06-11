@@ -17,7 +17,7 @@ $item->currency_id = "ARS";
 $item->unit_price = $_POST['price'];
 
 $item->description = "Dispositivo movil de Tienda ecommerce";
-//$item->picture_url = $_POST['img'];
+$item->picture_url = "https://defelicerafae-mp-ecommerce-php.herokuapp.com/".$_POST['img'];
 
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
@@ -192,7 +192,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. 10"; ?>
+                                            <?php echo  $_POST['unit'] ."U. 12"; ?>
                                         </h3>
                                     </div>
                                     <form action="approved.php" method="POST">
