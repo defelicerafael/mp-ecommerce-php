@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 require __DIR__ .  '/vendor/autoload.php';
 
 
-MercadoPago\SDK::setIntegratorId(" dev_24c65fb163bf11ea96500242ac130004");
+MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
 
 $preference = new MercadoPago\Preference();
@@ -17,7 +17,7 @@ $item->currency_id = "ARS";
 $item->unit_price = $_POST['price'];
 $item->description = "Dispositivo móvil de Tienda e-commerce";
 $item->picture_url = $_POST['img'];
-/*
+
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
 $payer->surname = "Landa";
@@ -51,7 +51,7 @@ $preference->payment_methods = array(
   ),
   "installments" => 6
 );
-*/
+
 
 $preference->items = array($item);
 $preference->save();
@@ -189,7 +189,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. solo items"; ?>
+                                            <?php echo  $_POST['unit'] ."U. v1.0"; ?>
                                         </h3>
                                     </div>
                                     <form action="/procesar-pago" method="POST">
