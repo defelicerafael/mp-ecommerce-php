@@ -1,7 +1,16 @@
-{
-    "id": 582789995,
-    "nickname": "TETE7910565",
-    "password": "qatest315",
-    "site_status": "active",
-    "email": "test_user_758433@testuser.com"
-}
+Test User (Comprador o Pagador)
+ID 471923173
+Email test_user_63274575@testuser.com
+Password qatest2417
+
+
+Visa	4170 0688 1010 8020	123	11/25
+
+APRO: Pago aprobado.
+CONT: Pago pendiente.
+OTHE: Rechazado por error general.
+CALL: Rechazado con validación para autorizar.
+FUND: Rechazado por monto insuficiente.
+SECU: Rechazado por código de seguridad inválido.
+EXPI: Rechazado por problema con la fecha de expiración.
+FORM: Rechazado por error en formulario.
