@@ -19,8 +19,8 @@ $item->description = "Dispositivo m&oacute;vil de Tienda e-commerce";
 $item->picture_url = "https://defelicerafae-mp-ecommerce-php.herokuapp.com/".$_POST['img'];
 
 $payer = new MercadoPago\Payer();
-$payer->firts = "Lalo";
-$payer->surname = "Landa";
+$payer->first_name = "Lalo";
+$payer->last_name = "Landa";
 $payer->email = "test_user_63274575@testuser.com";
 $payer->phone = array(
     "area_code" => "11",
