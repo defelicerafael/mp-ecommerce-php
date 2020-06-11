@@ -2,7 +2,7 @@
   
   require_once dirname(__FILE__) . '/../../index.php';
   
-  $config->set('ACCESS_TOKEN', 'ACCESS_TOKEN');
+  $config->set('TEST-8252776030650874-042714-9a05714165150fd297fa432441698541-25246282', 'TEST-8252776030650874-042714-9a05714165150fd297fa432441698541-25246282');
   
   $payment = new MercadoPago\Payment();
   
