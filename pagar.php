@@ -1,20 +1,22 @@
 <?php
-// SDK de Mercado Pago
-require __DIR__ .  './vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
-// Agrega credenciales
-MercadoPago\SDK::setAccessToken('APP_USR-8252776030650874-042714-cb683313524ab9048313c14b8096a521-25246282');
+    MercadoPago\SDK::setAccessToken("ENV_ACCESS_TOKEN");
 
-// Crea un objeto de preferencia
-$preference = new MercadoPago\Preference();
+    $payment = new MercadoPago\Payment();
 
-// Crea un ítem en la preferencia
-$item = new MercadoPago\Item();
-$item->title = 'Mi producto';
-$item->quantity = 1;
-$item->unit_price = 75.56;
-$preference->items = array($item);
-$preference->save();
+    $payment->transaction_amount = 141;
+    $payment->token = "YOUR_CARD_TOKEN";
+    $payment->description = "Ergonomic Silk Shirt";
+    $payment->installments = 1;
+    $payment->payment_method_id = "visa";
+    $payment->payer = array(
+      "email" => "larue.nienow@hotmail.com"
+    );
+
+    $payment->save();
+
+    echo $payment->status;
 
  
 ?>
