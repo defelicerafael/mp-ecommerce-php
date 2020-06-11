@@ -15,8 +15,7 @@ $item->title = $_POST['title'];
 $item->quantity = $_POST['unit'];
 $item->currency_id = "ARS";
 $item->unit_price = $_POST['price'];
-
-$item->description = "Dispositivo movil de Tienda ecommerce";
+$item->description = "Dispositivo móvil de Tienda e-commerce";
 $item->picture_url = "https://defelicerafae-mp-ecommerce-php.herokuapp.com/".$_POST['img'];
 
 $payer = new MercadoPago\Payer();
@@ -28,11 +27,11 @@ $payer->phone = array(
     "number" => "22223333"
 );
   
-  $payer->address = array(
+$payer->address = array(
     "street_name" => "False",
-    "street_number" => 123,
+    "street_number" => "123",
     "zip_code" => "1111"
-  );
+);
 
 $preference->external_reference = "defelicerafael@gmail.com";
  
@@ -56,6 +55,8 @@ $preference->payment_methods = array(
 $preference->notification_url = "defelicerafae-mp-ecommerce-php.herokuapp.com/webhook/";
 
 $preference->items = array($item);
+
+
 $preference->save();
 
 
@@ -192,7 +193,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U."; ?>
+                                            <?php echo  $_POST['unit'] ."U. 1"; ?>
                                         </h3>
                                     </div>
                                     <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
