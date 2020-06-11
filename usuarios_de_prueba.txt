@@ -14,3 +14,45 @@ FUND: Rechazado por monto insuficiente.
 SECU: Rechazado por código de seguridad inválido.
 EXPI: Rechazado por problema con la fecha de expiración.
 FORM: Rechazado por error en formulario.
+
+
+
+collection_id=7054662531
+collection_status=approved
+external_reference=defelicerafael@gmail.com
+payment_type=credit_card
+merchant_order_id=1524530087
+preference_id=469485398-9bf73def-e8ba-4ab9-ab87-324963791bab
+site_id=MLA
+processing_mode=aggregator
+merchant_account_id=null
+
+
+
+REQUEST
+URL: https://defelicerafae-mp-ecommerce-php.herokuapp.com/webhook/
+QueryString: data.id=123&type=test
+Body: {"application_id":"107697664459793","id":"123","live_mode":"false","type":"test","api_version":"v1","action":"test.created","date_created":"2017-03-10 02:02:02 +0000 UTC","user_id":"471923173"}
+User-Agent: MercadoPago WebHook v1.0 test
+
+RESPONSE
+Status Http: 200 OK
+
+
+
+REQUEST
+URL: https://defelicerafae-mp-ecommerce-php.herokuapp.com/webhook/
+QueryString: data.id=123&type=test
+Body: {"user_id":"471923173","application_id":"107697664459793","id":"123","live_mode":"false","type":"test","api_version":"v1","action":"test.created","date_created":"2017-03-10 02:02:02 +0000 UTC"}
+User-Agent: MercadoPago WebHook v1.0 test
+
+RESPONSE
+Status Http: 200 OK
+
+REQUEST
+URL: https://defelicerafae-mp-ecommerce-php.herokuapp.com/webhook/
+QueryString: data.id=123&type=test
+Body: {"api_version":"v1","action":"test.created","date_created":"2017-03-10 02:02:02 +0000 UTC","user_id":"471923173","application_id":"107697664459793","id":"123","live_mode":"false","type":"test"}
+User-Agent: MercadoPago WebHook v1.0 test
+
+
