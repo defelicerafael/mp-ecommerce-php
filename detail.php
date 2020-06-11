@@ -59,7 +59,7 @@ $preference->payment_methods = array(
   "installments" => 6
 );
 
-$preference->notification_url = "https://defelicerafae-mp-ecommerce-php.herokuapp.com/webhook";
+$preference->notification_url = "https://defelicerafae-mp-ecommerce-php.herokuapp.com/ipn.php";
 
 $preference->items = array($item);
 
@@ -199,7 +199,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. 6"; ?>
+                                            <?php echo  $_POST['unit'] ."U. 8"; ?>
                                         </h3>
                                     </div>
                                     <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
