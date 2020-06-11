@@ -16,7 +16,7 @@ $item->quantity = $_POST['unit'];
 $item->currency_id = "ARS";
 $item->unit_price = $_POST['price'];
 
-$item->description = "Dispositivo móvil de Tienda e-commerce";
+//$item->description = "Dispositivo móvil de Tienda e-commerce";
 //$item->picture_url = $_POST['img'];
 /*
 $payer = new MercadoPago\Payer();
@@ -191,7 +191,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. v1.6 sf"; ?>
+                                            <?php echo  $_POST['unit'] ."U. v1.7"; ?>
                                         </h3>
                                     </div>
                                     <form action="success.html" method="POST">
