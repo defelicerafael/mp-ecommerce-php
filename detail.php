@@ -15,10 +15,11 @@ $item->quantity = $_POST['unit'];
 $item->currency_id = "ARS";
 $item->unit_price = $_POST['price'];
 
+
 $preference->back_urls = array(
-    "success" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/success",
-    "failure" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/failure",
-    "pending" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/pending"
+    "success" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/success.html",
+    "failure" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/failure.html",
+    "pending" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/pending.html"
 );
 $preference->auto_return = "approved";
 
