@@ -35,14 +35,14 @@ $payer->phone = array(
   );
 
 $preference->external_reference = "defelicerafael@gmail.com";
-  
+  */
 $preference->back_urls = array(
     "success" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/success.html",
     "failure" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/failure.html",
     "pending" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/pending.html"
 );
 $preference->auto_return = "approved";
-
+/*
 $preference->payment_methods = array(
   "excluded_payment_methods" => array(
     array("id" => "amex")
@@ -191,7 +191,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. v1.4"; ?>
+                                            <?php echo  $_POST['unit'] ."U. v1.5"; ?>
                                         </h3>
                                     </div>
                                     <form action="/procesar-pago" method="POST">
