@@ -53,7 +53,7 @@ $preference->payment_methods = array(
   "installments" => 6
 );
 
-$preference->notification_url = "https://inauj-mp-commerce-php.herokuapp.com/webhooks/";
+$preference->notification_url = "defelicerafae-mp-ecommerce-php.herokuapp.com/webhook/";
 
 $preference->items = array($item);
 $preference->save();
