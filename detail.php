@@ -37,9 +37,9 @@ $payer->phone = array(
 $preference->external_reference = "defelicerafael@gmail.com";
  
 $preference->back_urls = array(
-    "success" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/success.html",
-    "failure" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/failure.html",
-    "pending" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/pending.html"
+    "success" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/success.php",
+    "failure" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/failure.php",
+    "pending" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/pending.php"
 );
 $preference->auto_return = "approved";
 
@@ -192,7 +192,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. 13"; ?>
+                                            <?php echo  $_POST['unit'] ."U. 14"; ?>
                                         </h3>
                                     </div>
                                     <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
