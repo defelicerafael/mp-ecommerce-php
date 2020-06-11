@@ -51,7 +51,7 @@ $preference->payment_methods = array(
   ),
   "installments" => 6
 );
-
+$preference->notification_url = "";
 
 $preference->items = array($item);
 $preference->save();
@@ -73,6 +73,7 @@ $preference->save();
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
+    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
     <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 
@@ -189,16 +190,10 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. v1.0"; ?>
+                                            <?php echo  $_POST['unit'] ."U. v1.1"; ?>
                                         </h3>
                                     </div>
-                                    <form action="/procesar-pago" method="POST">
-                                        <script
-                                         src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                                         data-preference-id="<?php echo $preference->id; ?>"
-                                         data-button-label="Pagar la compra">
-                                        </script>
-                                    </form>
+                                    <a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a>
                                     <!--<button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
                                 </div>
                             </div>
