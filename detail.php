@@ -4,20 +4,11 @@ error_reporting(E_ALL);
 require __DIR__ .  '/vendor/autoload.php';
 
 
-
 MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
 MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
-$preference = new MercadoPago\Preference();
 
-$item = new MercadoPago\Item();
-$item->id = "1234";
-$item->title = $_POST['title'];
-$item->quantity = $_POST['unit'];
-$item->currency_id = "ARS";
-$item->unit_price = $_POST['price'];
-$item->description = "Dispositivo m&oacute;vil de Tienda e-commerce";
-$item->picture_url = "https://defelicerafae-mp-ecommerce-php.herokuapp.com/".$_POST['img'];
+$preference = new MercadoPago\Preference();
 
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
@@ -40,34 +31,33 @@ $payer->address = array(
 
 $preference->payer = $payer;
 
-$preference->external_reference = "defelicerafael@gmail.com";
- 
+// back_urls
 $preference->back_urls = array(
     "success" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/success.php",
     "failure" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/failure.php",
     "pending" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/pending.php"
 );
+
 $preference->auto_return = "approved";
 
-$preference->payment_methods = array(
-  "excluded_payment_methods" => array(
-    array("id" => "amex")
-  ),
-  "excluded_payment_types" => array(
-    array("id" => "atm")
-  ),
-  "installments" => 6
-);
-
-$preference->notification_url = "defelicerafae-mp-ecommerce-php.herokuapp.com/ipn.php";
-
+// Crea un ítem en la preferencia
+$item = new MercadoPago\Item();
+$item->id = "1234";
+$item->description = "Dispositivo móvil de Tienda e-commerce";
+$item->picture_url = $_POST['img'];
+$item->title = $_POST['title'];
+$item->quantity = $_POST['unit'];
+$item->unit_price = $_POST['price'];
 $preference->items = array($item);
+$preference->notification_url = 'https://defelicerafae-mp-ecommerce-php.herokuapp.com/ipn.php';
+$preference->external_reference = "defelicerafael@gmail.com";
 
-
+$preference->payment_methods = array(
+"excluded_payment_methods" => array(array("id" => "amex")),
+"excluded_payment_types" => array(array("id" => "atm")),
+"installments" => 6);
 
 $preference->save();
-
-
 
 ?>
 
@@ -201,7 +191,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. A"; ?>
+                                            <?php echo  $_POST['unit'] ."U. A1"; ?>
                                         </h3>
                                     </div>
                                     <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
