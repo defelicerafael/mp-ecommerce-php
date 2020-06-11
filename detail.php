@@ -29,7 +29,7 @@ $payer->phone = array(
 );
   
 $payer->address = array(
-    "street_name" => False,
+    "street_name" => "False",
     "street_number" => 123,
     "zip_code" => 1111
 );
@@ -195,7 +195,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. 4"; ?>
+                                            <?php echo  $_POST['unit'] ."U. 5"; ?>
                                         </h3>
                                     </div>
                                     <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
