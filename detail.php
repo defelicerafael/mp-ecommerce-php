@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
 
-MercadoPago\SDK::setAccessToken('TEST-8252776030650874-042714-9a05714165150fd297fa432441698541-25246282');
+MercadoPago\SDK::setAccessToken('TEST-1445648419028697-061102-73953663d76dd48ad25049079946c856-582789995');
 
 $preference = new MercadoPago\Preference();
 
@@ -159,7 +159,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. T"; ?>
+                                            <?php echo  $_POST['unit'] ."U. Usuario de Prueba"; ?>
                                         </h3>
                                     </div>
                                     <form action="/procesar-pago" method="POST">
