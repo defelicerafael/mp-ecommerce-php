@@ -7,6 +7,7 @@ require __DIR__ .  '/vendor/autoload.php';
 
 MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
 MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
+
 $preference = new MercadoPago\Preference();
 
 $item = new MercadoPago\Item();
@@ -23,14 +24,14 @@ $payer->first_name = "Lalo";
 $payer->last_name = "Landa";
 $payer->email = "test_user_63274575@testuser.com";
 $payer->phone = array(
-    "area_code" => "11",
+    "area_code" => 11,
     "number" => "22223333"
 );
   
 $payer->address = array(
-    "street_name" => "False",
-    "street_number" => "123",
-    "zip_code" => "1111"
+    "street_name" => False,
+    "street_number" => 123,
+    "zip_code" => 1111
 );
 
 $preference->external_reference = "defelicerafael@gmail.com";
@@ -194,7 +195,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. 3"; ?>
+                                            <?php echo  $_POST['unit'] ."U. 4"; ?>
                                         </h3>
                                     </div>
                                     <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
