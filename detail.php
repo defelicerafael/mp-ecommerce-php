@@ -3,19 +3,32 @@ error_reporting(E_ALL);
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
 
-MercadoPago\SDK::setAccessToken('APP_USR-8252776030650874-042714-cb683313524ab9048313c14b8096a521-25246282');
+MercadoPago\SDK::setAccessToken('TEST-8252776030650874-042714-9a05714165150fd297fa432441698541-25246282');
 
 $preference = new MercadoPago\Preference();
 
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
+$item->id = "1234";
 $item->title = $_POST['title'];
 $item->quantity = $_POST['unit'];
+$item->currency_id = "ARS";
 $item->unit_price = $_POST['price'];
+
+$preference->back_urls = array(
+    "success" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/success",
+    "failure" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/failure",
+    "pending" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/pending"
+);
+$preference->auto_return = "approved";
+
+
 $preference->items = array($item);
 $preference->save();
-?>
 
+
+
+?>
 
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

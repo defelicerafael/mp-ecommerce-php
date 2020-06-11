@@ -1,0 +1,7 @@
+{
+    "id": 582789995,
+    "nickname": "TETE7910565",
+    "password": "qatest315",
+    "site_status": "active",
+    "email": "test_user_758433@testuser.com"
+}
