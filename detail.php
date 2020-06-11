@@ -17,7 +17,7 @@ $item->currency_id = "ARS";
 $item->unit_price = $_POST['price'];
 $item->description = "Dispositivo móvil de Tienda e-commerce";
 $item->picture_url = $_POST['img'];
-
+/*
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
 $payer->surname = "Landa";
@@ -51,7 +51,7 @@ $preference->payment_methods = array(
   ),
   "installments" => 6
 );
-
+*/
 
 $preference->items = array($item);
 $preference->save();
