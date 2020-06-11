@@ -192,16 +192,10 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. 12"; ?>
+                                            <?php echo  $_POST['unit'] ."U. 13"; ?>
                                         </h3>
                                     </div>
-                                    <form action="approved.php" method="POST">
-                                        <script
-                                         src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                                         data-preference-id="<?php echo $preference->id; ?>"
-                                         data-button-label="Pagar la compra">
-                                        </script>
-                                    </form>
+                                    <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
                                     <!--<button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
                                 </div>
                             </div>
