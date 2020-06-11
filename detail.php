@@ -3,10 +3,11 @@ error_reporting(E_ALL);
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
 
-MercadoPago\SDK::setAccessToken('TEST-1445648419028697-061102-73953663d76dd48ad25049079946c856-582789995');
+
+MercadoPago\SDK::setIntegratorId(" dev_24c65fb163bf11ea96500242ac130004");
+MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
 
 $preference = new MercadoPago\Preference();
-
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
 $item->id = "1234";
@@ -14,14 +15,42 @@ $item->title = $_POST['title'];
 $item->quantity = $_POST['unit'];
 $item->currency_id = "ARS";
 $item->unit_price = $_POST['price'];
+$item->description = "Dispositivo móvil de Tienda e-commerce";
+$item->picture_url = $_POST['img'];
 
+$payer = new MercadoPago\Payer();
+$payer->name = "Lalo";
+$payer->surname = "Landa";
+$payer->email = "test_user_63274575@testuser.com";
+$payer->phone = array(
+    "area_code" => "11",
+    "number" => "22223333"
+);
+  
+  $payer->address = array(
+    "street_name" => "False",
+    "street_number" => 123,
+    "zip_code" => "1111"
+  );
 
+$preference->external_reference = "defelicerafael@gmail.com";
+  
 $preference->back_urls = array(
     "success" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/success.html",
     "failure" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/failure.html",
     "pending" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/pending.html"
 );
 $preference->auto_return = "approved";
+
+$preference->payment_methods = array(
+  "excluded_payment_methods" => array(
+    array("id" => "amex")
+  ),
+  "excluded_payment_types" => array(
+    array("id" => "atm")
+  ),
+  "installments" => 6
+);
 
 
 $preference->items = array($item);
@@ -44,7 +73,7 @@ $preference->save();
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
-    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+    <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 
     <link rel="stylesheet" href="./assets/category.css" media="screen, print">
@@ -163,12 +192,7 @@ $preference->save();
                                             <?php echo  $_POST['unit'] ."U. Usuario de Prueba"; ?>
                                         </h3>
                                     </div>
-                                    <form action="/procesar-pago" method="POST">
-                                        <script
-                                         src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                                         data-preference-id="<?php echo $preference->id; ?>">
-                                        </script>
-                                    </form>
+                                    <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
                                     <!--<button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
                                 </div>
                             </div>
