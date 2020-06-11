@@ -16,7 +16,7 @@ $item->quantity = $_POST['unit'];
 $item->currency_id = "ARS";
 $item->unit_price = $_POST['price'];
 
-//$item->description = "Dispositivo móvil de Tienda e-commerce";
+$item->description = "Dispositivo movil de Tienda ecommerce";
 //$item->picture_url = $_POST['img'];
 
 $payer = new MercadoPago\Payer();
@@ -52,9 +52,9 @@ $preference->payment_methods = array(
   ),
   "installments" => 6
 );
-/*
+
 $preference->notification_url = "https://inauj-mp-commerce-php.herokuapp.com/webhooks/";
-*/
+
 $preference->items = array($item);
 $preference->save();
 
@@ -192,7 +192,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. v1.8"; ?>
+                                            <?php echo  $_POST['unit'] ."U. 10"; ?>
                                         </h3>
                                     </div>
                                     <form action="success.php" method="POST">
