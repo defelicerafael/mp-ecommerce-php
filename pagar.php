@@ -1,7 +1,6 @@
 <?php
 
-echo "entro";
-/*
+
 // SDK de Mercado Pago
 require __DIR__ .  './vendor/autoload.php';
 
@@ -18,13 +17,13 @@ $item->quantity = 1;
 $item->unit_price = 75.56;
 $preference->items = array($item);
 $preference->save();
- * */
+
  
 ?>
-<!--
+
 <form action="/procesar-pago" method="POST">
   <script
    src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
    data-preference-id="<?php echo $preference->id; ?>">
   </script>
-</form>-->
+</form>
