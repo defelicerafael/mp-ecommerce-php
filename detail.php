@@ -195,7 +195,7 @@ $preference->save();
                                             <?php echo  $_POST['unit'] ."U. 10"; ?>
                                         </h3>
                                     </div>
-                                    <form action="success.php" method="POST">
+                                    <form action="approved.php" method="POST">
                                         <script
                                          src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
                                          data-preference-id="<?php echo $preference->id; ?>"
