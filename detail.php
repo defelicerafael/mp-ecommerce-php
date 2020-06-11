@@ -18,7 +18,7 @@ $item->unit_price = $_POST['price'];
 
 //$item->description = "Dispositivo móvil de Tienda e-commerce";
 //$item->picture_url = $_POST['img'];
-/*
+
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
 $payer->surname = "Landa";
@@ -35,14 +35,14 @@ $payer->phone = array(
   );
 
 $preference->external_reference = "defelicerafael@gmail.com";
-  */
+ 
 $preference->back_urls = array(
     "success" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/success.html",
     "failure" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/failure.html",
     "pending" => "https://defelicerafae-mp-ecommerce-php.herokuapp.com/pending.html"
 );
 $preference->auto_return = "approved";
-/*
+
 $preference->payment_methods = array(
   "excluded_payment_methods" => array(
     array("id" => "amex")
@@ -52,6 +52,7 @@ $preference->payment_methods = array(
   ),
   "installments" => 6
 );
+/*
 $preference->notification_url = "https://inauj-mp-commerce-php.herokuapp.com/webhooks/";
 */
 $preference->items = array($item);
@@ -191,10 +192,10 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. v1.7"; ?>
+                                            <?php echo  $_POST['unit'] ."U. v1.8"; ?>
                                         </h3>
                                     </div>
-                                    <form action="success.html" method="POST">
+                                    <form action="success.php" method="POST">
                                         <script
                                          src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
                                          data-preference-id="<?php echo $preference->id; ?>"
