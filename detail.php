@@ -49,7 +49,9 @@ $item->title = $_POST['title'];
 $item->quantity = $_POST['unit'];
 $item->unit_price = $_POST['price'];
 $preference->items = array($item);
-$preference->notification_url = 'https://defelicerafae-mp-ecommerce-php.herokuapp.com/ipn.php';
+//$preference->notification_url = 'https://defelicerafae-mp-ecommerce-php.herokuapp.com/ipn.php';
+$preference->notification_url = 'https://defelicerafae-mp-ecommerce-php.herokuapp.com/webhook';
+
 $preference->external_reference = "defelicerafael@gmail.com";
 
 $preference->payment_methods = array(
