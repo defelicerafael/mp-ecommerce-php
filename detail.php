@@ -20,19 +20,25 @@ $item->description = "Dispositivo m&oacute;vil de Tienda e-commerce";
 $item->picture_url = "https://defelicerafae-mp-ecommerce-php.herokuapp.com/".$_POST['img'];
 
 $payer = new MercadoPago\Payer();
-$payer->first_name = "Lalo";
-$payer->last_name = "Landa";
+$payer->name = "Lalo";
+$payer->surname = "Landa";
 $payer->email = "test_user_63274575@testuser.com";
+$payer->identification = array(
+  "type" => "DNI",
+  "number" => "22333444"
+);
 $payer->phone = array(
-    "area_code" => 11,
-    "number" => "22223333"
+  "area_code" => "011",
+  "number" => "2222-3333"
 );
-  
+
 $payer->address = array(
-    "street_name" => "False",
-    "street_number" => 123,
-    "zip_code" => 1111
+  "street_name" => "False",
+  "street_number" => 123,
+  "zip_code" => "1111"
 );
+
+$preference->payer = $payer;
 
 $preference->external_reference = "defelicerafael@gmail.com";
  
@@ -53,10 +59,10 @@ $preference->payment_methods = array(
   "installments" => 6
 );
 
-$preference->notification_url = "defelicerafae-mp-ecommerce-php.herokuapp.com/webhook/";
+$preference->notification_url = "defelicerafae-mp-ecommerce-php.herokuapp.com/ipn.php";
 
 $preference->items = array($item);
-$preference->payer = $payer;
+
 
 
 $preference->save();
@@ -195,7 +201,7 @@ $preference->save();
                                             <?php echo "$" . $_POST['price']; ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo  $_POST['unit'] ."U. 5"; ?>
+                                            <?php echo  $_POST['unit'] ."U. A"; ?>
                                         </h3>
                                     </div>
                                     <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
